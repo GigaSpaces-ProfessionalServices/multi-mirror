@@ -27,7 +27,7 @@
         <os-core:properties>
             <props>
                 <!-- Use ALL IN CACHE -->
-                <prop key="cluster-config.mirror-service.url">jini://*/mirror-service${clusterInfo.instanceId}_container/mirror-service${clusterInfo.instanceId}</prop>
+                <prop key="cluster-config.mirror-service.url">jini://*/mirror${clusterInfo.instanceId}_container/mirror${clusterInfo.instanceId}</prop>
                 <prop key="space-config.engine.cache_policy">1</prop>
                 <prop key="space-config.external-data-source.usage">read-only</prop>
                 <prop key="cluster-config.cache-loader.external-data-source">true</prop>

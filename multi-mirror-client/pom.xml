@@ -13,20 +13,19 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>multi-mirror-client</name>
     <url>http://maven.apache.org</url>
-    
+
     <properties>
         <gsType>PU</gsType>
     </properties>
-    
-     <dependencies>
-        <dependency>
-            <groupId>org.gigaspaces</groupId>
-            <artifactId>xap-datagrid</artifactId>
-        </dependency>
 
+    <dependencies>
         <dependency>
-            <groupId>org.gigaspaces</groupId>
-            <artifactId>xap-openspaces</artifactId>
+            <groupId>com.gigaspaces</groupId>
+            <artifactId>gs-runtime</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gigaspaces</groupId>
+            <artifactId>gs-openspaces</artifactId>
         </dependency>
         <dependency>
             <groupId>com.gigaspaces</groupId>
@@ -34,7 +33,7 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
-    
+
     <build>
         <finalName>feeder</finalName>
         <plugins>

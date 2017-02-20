@@ -17,13 +17,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.gigaspaces</groupId>
-            <artifactId>xap-datagrid</artifactId>
+            <groupId>com.gigaspaces</groupId>
+            <artifactId>gs-runtime</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.gigaspaces</groupId>
-            <artifactId>xap-openspaces</artifactId>
+            <groupId>com.gigaspaces</groupId>
+            <artifactId>gs-openspaces</artifactId>
         </dependency>
 
         <dependency>

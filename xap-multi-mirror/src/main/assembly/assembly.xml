@@ -9,11 +9,19 @@
     <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
-            <directory>src/main/resources/META-INF/spring/${item}</directory>
+            <directory>src/main/resources/META-INF/spring</directory>
             <lineEnding>keep</lineEnding>
             <outputDirectory>META-INF/spring</outputDirectory>
             <includes>
                 <include>pu.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources/META-INF/spring/${item}</directory>
+            <lineEnding>keep</lineEnding>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>mirror.properties</include>
             </includes>
         </fileSet>
     </fileSets>

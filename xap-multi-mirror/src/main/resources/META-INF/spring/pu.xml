@@ -6,6 +6,7 @@
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/10.2/core/openspaces-core.xsd">
 
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="classpath:mirror.properties"/>
     </bean>
 
     <!--
@@ -14,9 +15,9 @@
      -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-        <property name="url" value="jdbc:sqlserver://10.8.1.130:1433;databaseName=TestDB1;integratedSecurity=false"/>
-        <property name="username" value="test"/>
-        <property name="password" value="default1A"/>
+        <property name="url" value="jdbc:sqlserver://${db.host}:${db.port};databaseName=${db.name};integratedSecurity=false"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
     </bean>
 
     <!--
@@ -37,6 +38,8 @@
                 <prop key="hibernate.cache.use_second_level_cache">false</prop>
                 <prop key="hibernate.cache.use_query_cache">false</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
             </props>
         </property>
     </bean>
@@ -53,8 +56,8 @@
         The mirror space. Uses the Hibernate external data source. Persists changes done on the Space that
         connects to this mirror space into the database using Hibernate.
     -->
-    <os-core:mirror id="mirror" url="/./mirror-service1" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint" operation-grouping="group-by-space-transaction">
-        <os-core:source-space name="space" partitions="3" backups="1"/>
+    <os-core:mirror id="mirror" url="/./${mirror.name}" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint" operation-grouping="group-by-space-transaction">
+        <os-core:source-space name="space" partitions="6" backups="0"/>
     </os-core:mirror>
 
 </beans>

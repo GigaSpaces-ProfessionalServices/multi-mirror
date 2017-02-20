@@ -16,7 +16,7 @@
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <xap.version>12.0.1</xap.version>
+        <xap.version>10.1.1-12800-RELEASE</xap.version>
         <junit.version>4.12</junit.version>
         <spring.version>4.1.1.RELEASE</spring.version>
     </properties>
@@ -24,15 +24,14 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.gigaspaces</groupId>
-                <artifactId>xap-datagrid</artifactId>
+                <groupId>com.gigaspaces</groupId>
+                <artifactId>gs-runtime</artifactId>
                 <version>${xap.version}</version>
                 <scope>provided</scope>
             </dependency>
-
             <dependency>
-                <groupId>org.gigaspaces</groupId>
-                <artifactId>xap-openspaces</artifactId>
+                <groupId>com.gigaspaces</groupId>
+                <artifactId>gs-openspaces</artifactId>
                 <version>${xap.version}</version>
                 <scope>provided</scope>
             </dependency>
